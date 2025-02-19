@@ -28,7 +28,7 @@ async def root():
     return {"whoami":"rolanvc.dev"}
 
 
-@app.get("/api/meta_webhook")
+@app.get("/api/webhook")
 async def meta_webhook(request:Request):
     """ This is the main endpoint for VERIFICATION REQUEST.
     Actually, it may also be the same endpoint for EVENT NOTIFICATION"""
@@ -49,7 +49,7 @@ async def meta_webhook(request:Request):
         logger.info(f"mismatch in token:{token} & verify token:{verify_token}::: {challenge}")
         return Response(status_code=403)
 
-@app.post("/webhook")
+@app.post("/api/webhook")
 async def webhook(hub:dict):
     pass
 
