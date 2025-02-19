@@ -2,14 +2,15 @@ from fastapi import FastAPI, Request, Response
 import json
 import os
 import logging
-
+from pathlib import Path
 app = FastAPI()
 # Configure logging
-log_directory = "logs"  # Directory to store logs
+log_directory = os.path.join(os.getcwd(), "logs")  # Directory to store logs
+print(log_directory)
 log_file_path = os.path.join(log_directory, "fastapi.log")
 
 # Create the log directory if it doesn't exist
-os.makedirs(log_directory, exist_ok=True)
+Path(log_directory).mkdir(parents=True, exist_ok=True)
 
 logging.basicConfig(
     filename=log_file_path,  # Log file path
