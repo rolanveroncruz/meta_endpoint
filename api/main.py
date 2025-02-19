@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 import json
 
 app = FastAPI()
@@ -11,11 +11,19 @@ async def root():
 
 
 @app.get("/api/meta_webhook")
-async def meta_webhook():
+async def meta_webhook(request:Request):
     """ This is the main endpoint for VERIFICATION REQUEST.
     Actually, it may also be the same endpoint for EVENT NOTIFICATION"""
+    verify_token = "a7b3D9zX2kLqR1mN5pT8"
+    mode = request.query_params.get("hub.mode", None)
+    token = request.query_params.get("hub.verify_token", None)
+    challenge = int(request.query_params.get("hub.challenge", None))
+    if token == verify_token:
+        return challenge
 
-    return {"message": "Hello World"}
+@app.post("/webhook")
+async def webhook(hub:dict):
+    pass
 
 
 @app.get("/api/hello/{name}")
