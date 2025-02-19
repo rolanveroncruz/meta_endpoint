@@ -5,7 +5,8 @@ import logging
 from pathlib import Path
 app = FastAPI()
 # Configure logging
-log_directory = os.path.join(os.getcwd(), "logs")  # Directory to store logs
+the_current_directory = Path(__file__).parent
+log_directory = os.path.join(the_current_directory, "logs")  # Directory to store logs
 print(log_directory)
 log_file_path = os.path.join(log_directory, "fastapi.log")
 
