@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Response
 import json
 
 app = FastAPI()
@@ -17,9 +17,9 @@ async def meta_webhook(request:Request):
     verify_token = "a7b3D9zX2kLqR1mN5pT8"
     mode = request.query_params.get("hub.mode", None)
     token = request.query_params.get("hub.verify_token", None)
-    challenge = int(request.query_params.get("hub.challenge", None))
+    challenge = request.query_params.get("hub.challenge", None)
     if token == verify_token:
-        return challenge
+        return Response(content=challenge)
 
 @app.post("/webhook")
 async def webhook(hub:dict):
