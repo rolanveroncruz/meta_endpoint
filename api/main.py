@@ -18,6 +18,8 @@ async def meta_webhook(request:Request):
     mode = request.query_params.get("hub.mode", None)
     token = request.query_params.get("hub.verify_token", None)
     challenge = request.query_params.get("hub.challenge", None)
+    if mode is None or token is None or challenge is None:
+        return Response(status_code=200)
     if token == verify_token:
         return Response(content=challenge, status_code=200)
     else:
