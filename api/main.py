@@ -20,6 +20,8 @@ async def meta_webhook(request:Request):
     challenge = request.query_params.get("hub.challenge", None)
     if token == verify_token:
         return Response(content=challenge, status_code=200)
+    else:
+        return Response(status_code=403)
 
 @app.post("/webhook")
 async def webhook(hub:dict):
