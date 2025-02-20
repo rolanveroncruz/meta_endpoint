@@ -3,6 +3,12 @@ import json
 import os
 import logging
 from pathlib import Path
+import hmac
+import hashlib
+from dotenv import load_dotenv
+
+load_dotenv()
+
 app = FastAPI()
 # Configure logging
 the_current_directory = Path(__file__).parent
@@ -50,8 +56,24 @@ async def meta_webhook(request:Request):
         return Response(status_code=403)
 
 @app.post("/api/webhook")
-async def webhook(hub:dict):
-    pass
+async def webhook(request:Request):
+    # first validata payload
+    # 1. generate SHA-256 signature from payload and app secret.
+    # 2. compare with secret.
+    request_json= await request.json()
+    logger.info(f"request_json: {request_json}")
+    x_hub_signature_sha256 = request.headers.get("x-hub-signature-sha256", None)
+
+    signature = hmac.new()
+
+    if x_hub_signature_sha256 is None:
+        logger.info(f"can't find x_hub_signature_sha256 in headers")
+    else:
+        logger.info(f"x_hub_signature_sha256: {x_hub_signature_sha256}")
+
+    return Response(status_code=200)
+
+
 
 
 @app.get("/api/hello/{name}")
