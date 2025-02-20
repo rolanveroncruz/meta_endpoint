@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fdc6e42-6506-4ec7-9855-25142073802e" name="Changes" comment="try to get user_identity from sender_id">
+    <list default="true" id="5fdc6e42-6506-4ec7-9855-25142073802e" name="Changes" comment="debug logging">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/main.py" afterDir="false" />
     </list>
@@ -121,7 +121,7 @@
       <updated>1739776221225</updated>
       <workItem from="1739776223933" duration="2262000" />
       <workItem from="1739838676254" duration="5670000" />
-      <workItem from="1740051117164" duration="1374000" />
+      <workItem from="1740051117164" duration="1620000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -291,7 +291,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740051568707</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="debug logging">
+      <option name="closed" value="true" />
+      <created>1740052504755</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1740052504755</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,7 +338,8 @@
     <MESSAGE value="fixed more enhanced logging in POST /webhook" />
     <MESSAGE value="fixed-2 more enhanced logging in POST /webhook" />
     <MESSAGE value="try to get user_identity from sender_id" />
-    <option name="LAST_COMMIT_MESSAGE" value="try to get user_identity from sender_id" />
+    <MESSAGE value="debug logging" />
+    <option name="LAST_COMMIT_MESSAGE" value="debug logging" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/meta_endpoint$meta_endpoint.coverage" NAME="meta_endpoint Coverage Results" MODIFIED="1739872453586" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />

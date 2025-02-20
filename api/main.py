@@ -96,9 +96,12 @@ async def webhook(request:Request):
                     sender_id=""
                     if sender is not None:
                         sender_id = sender.get("id", None)
-
-                        get_url=f"https://graph.facebook.com/{sender_id}?fields=first_name,last_name&token={token}"
-                        request = requests.get(get_url)
+                        try:
+                            get_url=f"https://graph.facebook.com/{sender_id}?fields=first_name,last_name&token={APP_TOKEN}"
+                            request = requests.get(get_url)
+                        except Exception as e:
+                            logger.error(f"get_url: {get_url}")
+                            logger.error(f"requests.get: {e}")
                         logger.info(f"get_url: {get_url}")
                         logger.info(f"request: {request}")
                     timestamp = entry_message.get("timestamp", 0)
