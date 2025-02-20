@@ -6,9 +6,11 @@ from pathlib import Path
 import hmac
 import hashlib
 from dotenv import load_dotenv
+import requests
 
 load_dotenv()
 APP_SECRET = os.getenv("AI_CHAT_APP_SECRET")
+APP_TOKEN = os.getenv("AI_CHAT_APP_TOKEN2")
 app = FastAPI()
 # Configure logging
 the_current_directory = Path(__file__).parent
@@ -93,14 +95,16 @@ async def webhook(request:Request):
                     sender_id=""
                     if sender is not None:
                         sender_id = sender.get("id", None)
+
+                        get_url=f"https://graph.facebook.com/{sender_id}?fields=first_name,last_name&token={token}"
+                        request = requests.get(get_url)
+                        logger.info(f"get_url: {get_url}")
+                        logger.info(f"request: {request}")
                     timestamp = entry_message.get("timestamp", 0)
                     message = entry_message["message"]
                     if message is not None:
                         message_text = message.get("text", None)
                         logger.info(f" received message (sender_id:{sender_id}, text: {message_text}, at timestamp: {timestamp}) ")
-
-
-
 
     return Response(status_code=200)
 
