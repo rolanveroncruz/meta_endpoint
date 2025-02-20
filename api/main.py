@@ -23,7 +23,7 @@ Path(log_directory).mkdir(parents=True, exist_ok=True)
 
 logging.basicConfig(
     filename=log_file_path,  # Log file path
-    level=logging.INFO,  # Minimum log level to capture (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+    level=logging.DEBUG,  # Minimum log level to capture (DEBUG, INFO, WARNING, ERROR, CRITICAL)
     format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",  # Log message format
     datefmt="%Y-%m-%d %H:%M:%S"  # Date format
 )
@@ -87,10 +87,11 @@ async def webhook(request:Request):
         logger.info(f"object: {object}")
         entries = request_json["entry"]
         for entry in entries:
-            logger.info(f"entry: {entry}")
+            logger.debug(f"entry: {entry}")
             if 'messaging' in entry:
                 messages=entry['messaging']
                 for entry_message in messages:
+                    logger.debug(f"entry_message: {entry_message}")
                     sender = entry_message.get("sender", None)
                     sender_id=""
                     if sender is not None:
