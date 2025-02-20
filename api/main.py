@@ -80,6 +80,20 @@ async def webhook(request:Request):
     else:
         logger.info(f"x_hub_signature_sha256: {x_hub_signature_sha256}")
 
+    object = request_json["object"]
+    if object and object == 'page':
+        entries = request_json["entry"]
+        for entry in entries:
+            if 'messaging' in entry:
+                messages=entry['messaging']
+                for message in messages:
+                    sender_id = message.get("sender_id", None)
+                    text = message.get("text", None)
+                    logger.info(f" received:/{sender_id: {sender_id}, text: {text}/}")
+
+
+
+
     return Response(status_code=200)
 
 
