@@ -82,11 +82,14 @@ async def webhook(request:Request):
 
     object = request_json["object"]
     if object and object == 'page':
+        logger.info(f"object: {object}")
         entries = request_json["entry"]
         for entry in entries:
+            logger.info(f"entry: {entry}")
             if 'messaging' in entry:
                 messages=entry['messaging']
                 for message in messages:
+                    logger.info(f"message: {message}")
                     sender_id = message.get("sender_id", None)
                     text = message.get("text", None)
                     logger.info(f" received:/{sender_id: {sender_id}, text: {text}/}")
