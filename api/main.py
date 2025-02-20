@@ -8,7 +8,7 @@ import hashlib
 from dotenv import load_dotenv
 
 load_dotenv()
-
+APP_SECRET = os.getenv("AI_CHAT_APP_SECRET")
 app = FastAPI()
 # Configure logging
 the_current_directory = Path(__file__).parent
@@ -60,11 +60,16 @@ async def webhook(request:Request):
     # first validata payload
     # 1. generate SHA-256 signature from payload and app secret.
     # 2. compare with secret.
+    request_body = await request.body()
+    secret = os.getenv("AI_CHAT_APP_SECRET")
     request_json= await request.json()
     logger.info(f"request_json: {request_json}")
     x_hub_signature_sha256 = request.headers.get("x-hub-signature-sha256", None)
+    secret_byte_array = bytes(secret, encoding="utf-8")
 
-    signature = hmac.new()
+    signature = hmac.new(secret_byte_array, request_body, hashlib.sha256).hexdigest()
+    logger.info(f"signature: {signature}")
+
 
     if x_hub_signature_sha256 is None:
         logger.info(f"can't find x_hub_signature_sha256 in headers")
