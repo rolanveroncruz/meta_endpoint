@@ -57,6 +57,10 @@ async def meta_webhook(request:Request):
 
 @app.post("/api/webhook")
 async def webhook(request:Request):
+    logger.info(f" ")
+    logger.info(f" ")
+    logger.info(f" ")
+    logger.info(f"/api/webhook called. ")
     # first validata payload
     # 1. generate SHA-256 signature from payload and app secret.
     # 2. compare with secret.
