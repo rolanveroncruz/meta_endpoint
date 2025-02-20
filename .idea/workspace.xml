@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fdc6e42-6506-4ec7-9855-25142073802e" name="Changes" comment="reorganized files; running using uvicorn">
+    <list default="true" id="5fdc6e42-6506-4ec7-9855-25142073802e" name="Changes" comment="fixed-2 more enhanced logging in POST /webhook">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/main.py" afterDir="false" />
     </list>
@@ -137,7 +137,151 @@
       <option name="project" value="LOCAL" />
       <updated>1739883023363</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="cast return value (challenge) as int">
+      <option name="closed" value="true" />
+      <created>1739935500888</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1739935500888</updated>
+    </task>
+    <task id="LOCAL-00004" summary="return an httpresponse object">
+      <option name="closed" value="true" />
+      <created>1739936059021</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1739936059021</updated>
+    </task>
+    <task id="LOCAL-00005" summary="return an httpresponse object with status">
+      <option name="closed" value="true" />
+      <created>1739936201331</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1739936201331</updated>
+    </task>
+    <task id="LOCAL-00006" summary="return an httpresponse object with 403 status if mismatch">
+      <option name="closed" value="true" />
+      <created>1739936620335</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1739936620335</updated>
+    </task>
+    <task id="LOCAL-00007" summary="missing parameters return code 200">
+      <option name="closed" value="true" />
+      <created>1739938868057</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1739938868057</updated>
+    </task>
+    <task id="LOCAL-00008" summary="anything unforeseen returns 403">
+      <option name="closed" value="true" />
+      <created>1739939633497</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1739939633497</updated>
+    </task>
+    <task id="LOCAL-00009" summary="implemented some logging">
+      <option name="closed" value="true" />
+      <created>1739940986080</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1739940986080</updated>
+    </task>
+    <task id="LOCAL-00010" summary="fixed creating logs directory">
+      <option name="closed" value="true" />
+      <created>1739943939295</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1739943939295</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fixed creating &quot;logs&quot; directory">
+      <option name="closed" value="true" />
+      <created>1739944362548</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1739944362548</updated>
+    </task>
+    <task id="LOCAL-00012" summary="renamed endpoint from &quot;meta_webhook&quot; to just &quot;webhook&quot;">
+      <option name="closed" value="true" />
+      <created>1739945336674</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1739945336674</updated>
+    </task>
+    <task id="LOCAL-00013" summary="testing event_notification">
+      <option name="closed" value="true" />
+      <created>1740028328637</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1740028328637</updated>
+    </task>
+    <task id="LOCAL-00014" summary="testing event_notification - after some bug fixes">
+      <option name="closed" value="true" />
+      <created>1740029534413</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1740029534413</updated>
+    </task>
+    <task id="LOCAL-00015" summary="added newlines in logging when POST /api/webhook is called.">
+      <option name="closed" value="true" />
+      <created>1740036348422</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1740036348422</updated>
+    </task>
+    <task id="LOCAL-00016" summary="expanded webhook to parse message sender and text. testing now...">
+      <option name="closed" value="true" />
+      <created>1740044550281</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1740044550281</updated>
+    </task>
+    <task id="LOCAL-00017" summary="enhanced logging in POST /webhook">
+      <option name="closed" value="true" />
+      <created>1740049218019</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1740049218019</updated>
+    </task>
+    <task id="LOCAL-00018" summary="more enhanced logging in POST /webhook">
+      <option name="closed" value="true" />
+      <created>1740049510497</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1740049510497</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fixed more enhanced logging in POST /webhook">
+      <option name="closed" value="true" />
+      <created>1740049743712</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1740049743712</updated>
+    </task>
+    <task id="LOCAL-00020" summary="fixed-2 more enhanced logging in POST /webhook">
+      <option name="closed" value="true" />
+      <created>1740050042186</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1740050042186</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,10 +290,28 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <MESSAGE value="reorganized files; running using uvicorn" />
-    <option name="LAST_COMMIT_MESSAGE" value="reorganized files; running using uvicorn" />
+    <MESSAGE value="cast return value (challenge) as int" />
+    <MESSAGE value="return an httpresponse object" />
+    <MESSAGE value="return an httpresponse object with status" />
+    <MESSAGE value="return an httpresponse object with 403 status if mismatch" />
+    <MESSAGE value="missing parameters return code 200" />
+    <MESSAGE value="anything unforeseen returns 403" />
+    <MESSAGE value="implemented some logging" />
+    <MESSAGE value="fixed creating logs directory" />
+    <MESSAGE value="fixed creating &quot;logs&quot; directory" />
+    <MESSAGE value="renamed endpoint from &quot;meta_webhook&quot; to just &quot;webhook&quot;" />
+    <MESSAGE value="testing event_notification" />
+    <MESSAGE value="testing event_notification - after some bug fixes" />
+    <MESSAGE value="added newlines in logging when POST /api/webhook is called." />
+    <MESSAGE value="expanded webhook to parse message sender and text. testing now..." />
+    <MESSAGE value="enhanced logging in POST /webhook" />
+    <MESSAGE value="more enhanced logging in POST /webhook" />
+    <MESSAGE value="fixed more enhanced logging in POST /webhook" />
+    <MESSAGE value="fixed-2 more enhanced logging in POST /webhook" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed-2 more enhanced logging in POST /webhook" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/meta_endpoint$meta_endpoint.coverage" NAME="meta_endpoint Coverage Results" MODIFIED="1739872453586" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/meta_endpoint$run.coverage" NAME="run Coverage Results" MODIFIED="1739934499735" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/meta_endpoint$run.coverage" NAME="run Coverage Results" MODIFIED="1740029456833" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
