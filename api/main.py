@@ -10,7 +10,7 @@ import requests
 
 load_dotenv()
 APP_SECRET = os.getenv("AI_CHAT_APP_SECRET")
-APP_TOKEN = os.getenv("AI_CHAT_APP_TOKEN2")
+APP_TOKEN = os.getenv("AI_CHAT_TESTBED_TOKEN2")
 app = FastAPI()
 # Configure logging
 the_current_directory = Path(__file__).parent
@@ -23,7 +23,7 @@ Path(log_directory).mkdir(parents=True, exist_ok=True)
 
 logging.basicConfig(
     filename=log_file_path,  # Log file path
-    level=logging.DEBUG,  # Minimum log level to capture (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+    level=logging.INFO,  # Minimum log level to capture (DEBUG, INFO, WARNING, ERROR, CRITICAL)
     format="%(asctime)s - %(levelname)s - %(name)s - %(message)s",  # Log message format
     datefmt="%Y-%m-%d %H:%M:%S"  # Date format
 )
