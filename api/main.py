@@ -89,17 +89,15 @@ async def webhook(request:Request):
             if 'messaging' in entry:
                 messages=entry['messaging']
                 for entry_message in messages:
-                    logger.info(f"entry_message: {entry_message}")
                     sender = entry_message.get("sender", None)
+                    sender_id=""
                     if sender is not None:
                         sender_id = sender.get("id", None)
-                        logger.info(f"sender_id: {sender_id}")
                     timestamp = entry_message.get("timestamp", 0)
                     message = entry_message["message"]
                     if message is not None:
-                        logger.info(f"message: {message}")
                         message_text = message.get("text", None)
-                        logger.info(f" received message: {sender_id}, text: {message_text}, at timestamp: {timestamp} ")
+                        logger.info(f" received message (sender_id:{sender_id}, text: {message_text}, at timestamp: {timestamp}) ")
 
 
 
